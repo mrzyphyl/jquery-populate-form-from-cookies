@@ -75,6 +75,8 @@
 
                 // Update data object from cookies
                 const updatedData   = { id: formId, inputs: formFields };
+
+                // I'm still working for a more better approach for this variables lol
                 const existingData  = getCookie(cookieName);
                 const newData       = ((existingData ? JSON.parse(existingData) : {}).values || [])
                                         .filter(entry => entry.id !== formId)
