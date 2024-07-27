@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Auto-Save Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="populateFromCookie.js"></script>
+</head>
+<body>
+    <form id="form1" data-auto-save>
+        <label for="input1">Input 1:</label>
+        <input type="text" id="input1" name="input1"><br>
+        <label for="input2">Input 2:</label>
+        <input type="text" id="input2" name="input2"><br>
+        <label for="input3">Input 3:</label>
+        <input type="text" id="input3" name="input3"><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <form id="form2" data-auto-save>
+        <label for="inputA">Input A:</label>
+        <input type="text" id="inputA" name="inputA"><br>
+        <label for="inputB">Input B:</label>
+        <input type="text" id="inputB" name="inputB"><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        $(document).ready(function () {
+            // Initialize the plugin with the specified cookie name
+            $('form[data-auto-save]').populateFromCookie({ cookieName: 'formCookie' });
+        });
+    </script>
+</body>
+</html>
